@@ -32,29 +32,16 @@
 <br />
 
 
-| <img src="https://raw.githubusercontent.com/nativescript-community/ui-popover/master/images/demo-ios.gif" height="500" /> | <img src="https://raw.githubusercontent.com/nativescript-community/ui-popover/master/images/demo-android.gif" height="500" /> |
-| --- | ----------- |
-| iOS Demo | Android Demo |
-
 
 [](#table-of-contents)
 
 ## Table of Contents
 
 * [Installation](#installation)
-* [Configuration](#configuration)
 * [API](#api)
-	* [Properties](#properties)
+	* [Using Svelte](#using-svelte)
+	* [Using Vue](#using-vue)
 	* [Methods](#methods)
-	* [Events](#events)
-* [Usage in Angular](#usage-in-angular)
-	* [Examples:](#examples)
-* [Usage in React](#usage-in-react)
-	* [Examples:](#examples-1)
-* [Usage in Svelte](#usage-in-svelte)
-	* [Examples:](#examples-2)
-* [Usage in Vue](#usage-in-vue)
-	* [Examples:](#examples-3)
 * [Demos and Development](#demos-and-development)
 	* [Setup](#setup)
 	* [Build](#build)
@@ -70,148 +57,48 @@ Run the following command from the root of your project:
 `ns plugin add @nativescript-community/ui-popover`
 
 
-[](#configuration)
-
-## Configuration
-For gestures to work, make sure to add the following code block inside the main application file (e.g. app.ts):
-
-```typescript
-import { install } from '@nativescript-community/ui-popover';
-install();
-```
-
-
 [](#api)
 
 ## API
 
-### Properties
+### Using Svelte
+```ts
+  import { showPopover } from '@nativescript-community/ui-popover/svelte';
 
-| Property            | Default                           | Type                        | Description                                             |
-| ------------------- | --------------------------------- | --------------------------- | ------------------------------------------------------- |
-| leftDrawer          | `undefined`                       | `View`                      | View containing the content for the left side drawer    |
-| rightDrawer         | `undefined`                       | `View`                      | View containing the content for the right side drawer   |
-| topDrawer          | `undefined`                       | `View`                      | View containing the content for the top side drawer    |
-| bottomDrawer         | `undefined`                       | `View`                      | View containing the content for the bottom side drawer   |
-| mainContent         | `undefined`                       | `View`                      | View containing the main content of the app             |
-| gestureEnabled      | `true`                            | `boolean`                   | Boolean setting if swipe gestures are enabled           |
-| backdropColor       | `new Color('rgba(0, 0, 0, 0.7)')` | `Color`                     | The color of the backdrop behind the drawer             |
-| leftDrawerMode      | `slide`                           | `Mode ('under' or 'slide')` | The color of the backdrop behind the drawer             |
-| rightDrawerMode     | `slide`                           | `Mode ('under' or 'slide')` | The color of the backdrop behind the drawer             |
-| gestureMinDist     | `10`                           | number | The min "swipe" distance to trigger the menu gesture             |
-| gestureHandlerOptions     | `null`                           | PanGestureHandlerOptions | Options to customize the pan gesture handler             |
-| leftSwipeDistance     | `40`                           | number | The "left" zone size from where the gesture is recognized             |
-| rightSwipeDistance     | `40`                           | number | The "right" zone size from where the gesture is recognized             |
-| topSwipeDistance     | `40`                           | number | The "top" zone size from where the gesture is recognized             |
-| bottomSwipeDistance     | `40`                           | number | The "bottom" zone size from where the gesture is recognized             |
-| leftOpenedDrawerAllowDraging     | `true`                           | boolean | Allow dragging the opened menu             |
-| rightOpenedDrawerAllowDraging     | `true`                           | boolean | Allow dragging the opened menu             |
-| topOpenedDrawerAllowDraging     | `true`                           | boolean | Allow dragging the opened menu             |
-| bottomOpenedDrawerAllowDraging     | `true`                           | boolean | Allow dragging the opened menu             |
+  showPopover({
+    view: YourInnerSvelteComponent,
+    props: {}
+  });
+```
 
+### Using Vue
+```ts
+  import PopoverPlugin from '@nativescript-community/ui-popover/vue';
+  Vue.use(PopoverPlugin);
 
+  //in your components
+  this.$showPopover(YourInnerVueComponent, {
+    props: {}
+  });
+```
 
 ### Methods
+```ts
+ interface PopoverOptions {
+    anchor: View;
+    vertPos?: VerticalPosition;
+    horizPos?: HorizontalPosition;
+    x?: number;
+    y?: number;
+    fitInScreen?: boolean;
+    onDismiss?: Function;
+}
+```
 
 | Name         | Return | Description                                     |
 | ------------ | ------ | ----------------------------------------------- |
-| open()       | `void` | Programatically open the drawer                 |
-| close()      | `void` | Programatically close the drawer                |
-| toggle()     | `void` | Programatically toggle the state of the drawer  |
-| install()    | `void` | Install gestures                                |
-
-### Events
-
-| Name      | Event Data         | Description                  |
-| --------- | ------------------ | ---------------------------- |
-| open      | `side`, `duration` | Drawer opens                 |
-| close     | `side`, `duration` | Drawer closes                |
-
-
-[](#usage-in-angular)
-
-## Usage in Angular
-Import the module into your project.
-
-```typescript
-import { DrawerModule } from "@nativescript-community/ui-popover/angular";
-
-@NgModule({
-    imports: [
-        DrawerModule
-    ]
-    schemas: [
-        NO_ERRORS_SCHEMA
-    ]
-})
-
-export class AppModule { }
-```
-
-### Examples:
-
-- [Basic Drawer](demo-snippets/ng/basic-drawer)
-  - A basic sliding drawer.
-- [All Sides](demo-snippets/ng/all-sides)
-  - An example of drawers on all sides: left, right, top, bottom.
-
-
-
-[](#usage-in-react)
-
-## Usage in React
-
-Register the plugin in your `app.ts`.
-
-```typescript
-import DrawerElement from '@nativescript-community/ui-popover/react';
-DrawerElement.register();
-```
-
-### Examples:
-
-- [Basic Drawer](demo-snippets/react/BasicDrawer.tsx)
-  - A basic sliding drawer.
-- [All Sides](demo-snippets/react/AllSides.tsx)
-  - An example of drawers on all sides: left, right, top, bottom.
-
-
-[](#usage-in-svelte)
-
-## Usage in Svelte
-
-Register the plugin in your `app.ts`.
-
-```typescript
-import DrawerElement from '@nativescript-community/ui-popover/svelte';
-DrawerElement.register();
-```
-
-### Examples:
-
-- [Basic Drawer](demo-snippets/svelte/BasicDrawer.svelte)
-  - A basic sliding drawer.
-- [All Sides](demo-snippets/svelte/AllSides.svelte)
-  - An example of drawers on all sides: left, right, top, bottom.
-
-
-[](#usage-in-vue)
-
-## Usage in Vue
-
-Register the plugin in your `app.js`.
-
-```typescript
-import DrawerPlugin from '@nativescript-community/ui-popover/vue'
-Vue.use(DrawerPlugin);
-```
-
-### Examples:
-
-- [Basic Drawer](demo-snippets/vue/BasicDrawer.vue)
-  - A basic sliding drawer.
-- [All Sides](demo-snippets/vue/AllSides.vue)
-  - An example of drawers on all sides: left, right, top, bottom.
+| showPopover(options: PopoverOptions)       | `void` | Programatically open the popover                 |
+| closePopover(options: PopoverOptions)      | `void` | Programatically close the popover                |
 
 
 [](#demos-and-development)

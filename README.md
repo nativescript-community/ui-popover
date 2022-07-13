@@ -1,31 +1,85 @@
-# NativeScript Drawer
+<!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️--><!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->
+<!--  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      DO NOT EDIT THIS READEME DIRECTLY! Edit "bluesprint.md" instead.
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<h1 align="center">@nativescript-community/ui-popover</h1>
+<p align="center">
+		<a href="https://npmcharts.com/compare/@nativescript-community/ui-popover?minimal=true"><img alt="Downloads per month" src="https://img.shields.io/npm/dm/@nativescript-community/ui-popover.svg" height="20"/></a>
+<a href="https://www.npmjs.com/package/@nativescript-community/ui-popover"><img alt="NPM Version" src="https://img.shields.io/npm/v/@nativescript-community/ui-popover.svg" height="20"/></a>
+	</p>
 
-NativeScript plugin that allows you to easily add a side drawer (side menu) to your projects. This can be used as an Open Source alternative to [RadSideDrawer](https://docs.nativescript.org/ui/components/sidedrawer/overview).
+<p align="center">
+  <b>Popover plugn</b></br>
+  <sub><sub>
+</p>
 
-[![npm](https://img.shields.io/npm/v/@nativescript-community/ui-popover.svg)](https://www.npmjs.com/package/@nativescript-community/ui-popover)
-[![npm downloads](https://img.shields.io/npm/dm/@nativescript-community/ui-popover.svg)](https://www.npmjs.com/package/@nativescript-community/ui-popover)
-[![npm downloads](https://img.shields.io/npm/dt/@nativescript-community/ui-popover.svg)](https://www.npmjs.com/package/@nativescript-community/ui-popover)
+<br />
 
-| <img src="images/demo-ios.gif" height="500" /> | <img src="images/demo-android.gif" height="500" /> |
+
+| <img src="https://raw.githubusercontent.com/nativescript-community/ui-popover/master/images/demo-ios.gif" height="500" /> | <img src="https://raw.githubusercontent.com/nativescript-community/ui-popover/master/images/demo-android.gif" height="500" /> |
 | --- | ----------- |
 | iOS Demo | Android Demo |
 
----
+
+[](#table-of-contents)
+
+
+[](#table-of-contents)
+
 ## Table of Contents
-1. [Installation](#installation)
-2. [Configuration](#configuration)
-3. [API](#api)
-4. [Usage in Angular](#usage-in-angular)
-5. [Usage in Vue](#usage-in-vue)
-6. [Usage in Svelte](#usage-in-svelte)
-7. [Usage in React](#usage-in-react)
-8. [Demos and Development](#demos-and-development)
+
+* [Installation](#installation)
+* [Configuration](#configuration)
+* [API](#api)
+	* [Properties](#properties)
+	* [Methods](#methods)
+	* [Events](#events)
+* [Usage in Angular](#usage-in-angular)
+	* [Examples:](#examples)
+* [Usage in React](#usage-in-react)
+	* [Examples:](#examples-1)
+* [Usage in Svelte](#usage-in-svelte)
+	* [Examples:](#examples-2)
+* [Usage in Vue](#usage-in-vue)
+	* [Examples:](#examples-3)
+* [Demos and Development](#demos-and-development)
+	* [Setup](#setup)
+	* [Build](#build)
+	* [Demos](#demos)
+* [Questions](#questions)
+
+
+[](#installation)
+
+
+[](#installation)
 
 ## Installation
+Run the following command from the root of your project:
 
-```
-ns plugin add @nativescript-community/ui-popover
-```
+`ns plugin add @nativescript-community/ui-popover`
+
+
+[](#configuration)
+
+
+[](#configuration)
 
 ## Configuration
 For gestures to work, make sure to add the following code block inside the main application file (e.g. app.ts):
@@ -34,6 +88,12 @@ For gestures to work, make sure to add the following code block inside the main 
 import { install } from '@nativescript-community/ui-popover';
 install();
 ```
+
+
+[](#api)
+
+
+[](#api)
 
 ## API
 
@@ -51,6 +111,7 @@ install();
 | leftDrawerMode      | `slide`                           | `Mode ('under' or 'slide')` | The color of the backdrop behind the drawer             |
 | rightDrawerMode     | `slide`                           | `Mode ('under' or 'slide')` | The color of the backdrop behind the drawer             |
 | gestureMinDist     | `10`                           | number | The min "swipe" distance to trigger the menu gesture             |
+| gestureHandlerOptions     | `null`                           | PanGestureHandlerOptions | Options to customize the pan gesture handler             |
 | leftSwipeDistance     | `40`                           | number | The "left" zone size from where the gesture is recognized             |
 | rightSwipeDistance     | `40`                           | number | The "right" zone size from where the gesture is recognized             |
 | topSwipeDistance     | `40`                           | number | The "top" zone size from where the gesture is recognized             |
@@ -78,6 +139,12 @@ install();
 | open      | `side`, `duration` | Drawer opens                 |
 | close     | `side`, `duration` | Drawer closes                |
 
+
+[](#usage-in-angular)
+
+
+[](#usage-in-angular)
+
 ## Usage in Angular
 Import the module into your project.
 
@@ -104,6 +171,12 @@ export class AppModule { }
   - An example of drawers on all sides: left, right, top, bottom.
 
 
+
+[](#usage-in-react)
+
+
+[](#usage-in-react)
+
 ## Usage in React
 
 Register the plugin in your `app.ts`.
@@ -119,6 +192,12 @@ DrawerElement.register();
   - A basic sliding drawer.
 - [All Sides](demo-snippets/react/AllSides.tsx)
   - An example of drawers on all sides: left, right, top, bottom.
+
+
+[](#usage-in-svelte)
+
+
+[](#usage-in-svelte)
 
 ## Usage in Svelte
 
@@ -136,6 +215,12 @@ DrawerElement.register();
 - [All Sides](demo-snippets/svelte/AllSides.svelte)
   - An example of drawers on all sides: left, right, top, bottom.
 
+
+[](#usage-in-vue)
+
+
+[](#usage-in-vue)
+
 ## Usage in Vue
 
 Register the plugin in your `app.js`.
@@ -152,34 +237,53 @@ Vue.use(DrawerPlugin);
 - [All Sides](demo-snippets/vue/AllSides.vue)
   - An example of drawers on all sides: left, right, top, bottom.
 
+
+[](#demos-and-development)
+
+
+[](#demos-and-development)
+
 ## Demos and Development
+
+
+### Setup
 
 To run the demos, you must clone this repo **recursively**.
 
 ```
-git clone https://github.com/nativescript-community/ui-popover.git --recursive
+git clone https://github.com/@nativescript-community/ui-popover.git --recursive
 ```
 
-### Install Dependencies:
+**Install Dependencies:**
 ```bash
 npm i # or 'yarn install' or 'pnpm install'
 ```
 
-### Interactive Menu:
+**Interactive Menu:**
+
 To start the interactive menu, run `npm start` (or `yarn start` or `pnpm start`). This will list all of the commonly used scripts.
 
-### Building Plugin:
+### Build
+
 ```bash
 npm run build
 
-# or for Angular
-npm run build.angular
+npm run build.angular # or for Angular
 ```
 
-### Running Demos:
+### Demos
+
 ```bash
 npm run demo.[ng|react|svelte|vue].[ios|android]
 
-# Example:
-npm run demo.svelte.ios
+npm run demo.svelte.ios # Example
 ```
+
+[](#questions)
+
+
+[](#questions)
+
+## Questions
+
+If you have any questions/issues/comments please feel free to create an issue or start a conversation in the [NativeScript Community Discord](https://nativescript.org/discord).

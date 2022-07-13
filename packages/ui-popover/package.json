@@ -1,0 +1,56 @@
+{
+    "name": "@nativescript-community/ui-popover",
+    "version": "0.1.1",
+    "description": "Popover plugn",
+    "main": "./index",
+    "sideEffects": false,
+    "typings": "./index.d.ts",
+    "scripts": {
+        "build": "npm run tsc && npm run readme",
+        "build.all": "npm run build",
+        "readme": "../../node_modules/.bin/readme generate -c ../../tools/readme/blueprint.json",
+        "tsc": "../../node_modules/.bin/cpy '**/*.d.ts' '../../packages/ui-popover' --parents --cwd=../../src/ui-popover && ../../node_modules/.bin/tsc -skipLibCheck -d",
+        "clean": "../../node_modules/.bin/rimraf ./*.d.ts ./*.js ./*.js.map"
+    },
+    "nativescript": {
+        "platforms": {
+            "android": "6.0.0",
+            "ios": "6.0.0"
+        }
+    },
+    "keywords": [
+        "NativeScript",
+        "JavaScript",
+        "Android",
+        "iOS",
+        "SideDrawer",
+        "RadSideDrawer",
+        "NativeScript UI",
+        "side drawer",
+        "side menu",
+        "menu",
+        "nativescript-community",
+        "Angular",
+        "Vue",
+        "Svelte",
+        "React",
+        "preview|https://raw.githubusercontent.com/nativescript-community/ui-popover/master/images/demo-ios.gif|iOS Demo",
+        "preview|https://raw.githubusercontent.com/nativescript-community/ui-popover/master/images/demo-android.gif|Android Demo"
+    ],
+    "author": {
+        "name": "Martin Guillon",
+        "email": "martin@akylas.fr"
+    },
+    "bugs": {
+        "url": "https://github.com/nativescript-community/ui-popover/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nativescript-community/ui-popover"
+    },
+    "license": "Apache-2.0",
+    "readmeFilename": "README.md",
+    "dependencies": {
+        "@nativescript-community/gesturehandler": "^2.0.5"
+    }
+}

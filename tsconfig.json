@@ -1,0 +1,9 @@
+{
+    "extends": "./tools/tsconfig",
+    "compilerOptions": {
+        "paths": {
+            "@nativescript-community/ui-popover": ["src/ui-popover"],
+            "@nativescript-community/ui-popover/*": ["src/ui-popover/*"]
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "../../src/ui-popover",
+        "outDir": "./",
+        "paths": {
+            "tns-core-modules": ["./node_modules/@nativescript/core"],
+            "tns-core-modules/*": ["./node_modules/@nativescript/core/*"]
+        }
+    },
+    "include": ["../../src/ui-popover/**/*", "../../references.d.ts", "../../src/references.d.ts"],
+    "exclude": ["../../src/ui-popover/angular/**"]
+}

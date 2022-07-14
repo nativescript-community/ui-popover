@@ -49,8 +49,5 @@
         "url": "https://github.com/nativescript-community/ui-popover"
     },
     "license": "Apache-2.0",
-    "readmeFilename": "README.md",
-    "dependencies": {
-        "@nativescript-community/gesturehandler": "^2.0.5"
-    }
+    "readmeFilename": "README.md"
 }

@@ -1,0 +1,7 @@
+{
+    "users": [
+        "com.nativescript.popover.relativepopupwindow:RelativePopupWindow*",
+        "android.widget:PopupWindow*",
+        "android.view.ViewGroup:LayoutParams*"
+    ]
+}

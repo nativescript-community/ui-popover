@@ -4,11 +4,15 @@ export * from './index.common';
 
 export interface PopoverOptions {
     anchor: View;
-    vertPos?: VerticalPosition;
-    horizPos?: HorizontalPosition;
+    vertPos?: VerticalPosition; // Android
+    horizPos?: HorizontalPosition; // Android
     x?: number;
     y?: number;
-    fitInScreen?: boolean;
+    fitInScreen?: boolean; // Android
+    outsideTouchable?: boolean;
+    transparent?: boolean; // iOS
+    context?: any;
+    hideArrow?: boolean; // iOS
     onDismiss?: Function;
 }
-export function showPopover(view: View, options: PopoverOptions): any;
+export function showPopover(view: View, options: PopoverOptions): { android: any; ios: any; close: () => void };

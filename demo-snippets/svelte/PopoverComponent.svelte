@@ -3,7 +3,7 @@
     export let min = 0;
     export let max = 1;
     export let value = 0;
-    export let backgroundColor = 'yellow';
+    export let backgroundColor = 'white';
     export let onChange = null;
     export let formatter = (value) => value + '';
 
@@ -14,8 +14,8 @@
     }
 </script>
 
-<gridLayout>
-    <gridLayout rows="auto,auto" columns="auto,*,auto" padding="0 10 0 10" borderRadius={4} {backgroundColor} margin="2">
+<gridLayout width="80%" rows="auto" {backgroundColor}>
+    <gridLayout rows="auto,auto" columns="auto,*,auto" padding="0 10 0 10" borderRadius={4} margin="2">
         {#if title}
             <label text={title} col={1} marginTop="0" />
         {/if}

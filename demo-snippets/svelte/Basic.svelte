@@ -1,11 +1,13 @@
 <script lang="typescript">
     import { showPopover } from '@nativescript-community/ui-popover/svelte';
+    import { Color } from '@nativescript/core';
     import PopoverComponent from './PopoverComponent.svelte';
 
     function openPopover(event) {
         showPopover({
             anchor: event.object,
             view: PopoverComponent,
+            hideArrow:false,
             props:{
                 title:'my popover'
             }

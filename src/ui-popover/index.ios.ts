@@ -19,14 +19,12 @@ class UIPopoverPresentationControllerDelegateImpl extends NSObject implements UI
     }
 
     popoverPresentationControllerDidDismissPopover(popoverPresentationController: UIPopoverPresentationController): void {
-        console.log('popoverPresentationControllerDidDismissPopover', this._options);
         if (this._options.onDismiss) {
             this._options.onDismiss();
         }
     }
 
     popoverPresentationControllerShouldDismissPopover(popoverPresentationController: UIPopoverPresentationController): any {
-        console.log('popoverPresentationControllerShouldDismissPopover', this._options);
         return !this._options?.outsideTouchable;
     }
 }
@@ -59,12 +57,10 @@ class UIViewAutoSizeUIViewAutoSize extends UIView {
         if (!view) {
             return CGSizeZero;
         }
-        const actualWidth = Math.min(boundsSize.width, Screen.mainScreen.widthPixels);
-        const widthSpec = Utils.layout.makeMeasureSpec(Utils.layout.toDevicePixels(actualWidth), Utils.layout.EXACTLY);
-        const heighthSpec = Utils.layout.makeMeasureSpec(Utils.layout.toDevicePixels(boundsSize.height), Utils.layout.UNSPECIFIED);
+        const widthSpec = Utils.layout.makeMeasureSpec(Math.max(Screen.mainScreen.widthPixels, Utils.layout.toDevicePixels(boundsSize.width)), Utils.layout.AT_MOST);
+        const heighthSpec = Utils.layout.makeMeasureSpec(Math.max(Screen.mainScreen.widthPixels, Utils.layout.toDevicePixels(boundsSize.height)), Utils.layout.AT_MOST);
         const measuredSize = View.measureChild(null, view, widthSpec, heighthSpec);
-        const newWidth = Utils.layout.toDevicePixels(actualWidth);
-        view.setMeasuredDimension(newWidth, measuredSize.measuredHeight);
+        view.setMeasuredDimension(measuredSize.measuredWidth, measuredSize.measuredHeight);
         const size = CGSizeMake(Utils.layout.toDeviceIndependentPixels(measuredSize.measuredWidth), Utils.layout.toDeviceIndependentPixels(measuredSize.measuredHeight));
         return size;
     }
@@ -84,7 +80,6 @@ function createUIViewAutoSizeUIViewAutoSize(view: View) {
     view._isAddedToNativeVisualTree = true;
     view.callLoaded();
     self._view = new WeakRef(view);
-    self.backgroundColor = UIColor.redColor;
     self.addSubview(view.nativeViewProtected);
     (view.nativeViewProtected as UIView).autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
     return self;
@@ -102,6 +97,8 @@ export function showPopover(
         transparent = false,
         onDismiss,
         outsideTouchable = false,
+        backgroundColor,
+        canOverlapSourceViewRect = false,
         context = {},
         hideArrow = false
     }: PopoverOptions
@@ -125,7 +122,6 @@ export function showPopover(
     const controller = PopoverViewController.initWithOwner(new WeakRef(view));
     view.viewController = controller;
     function _onDismiss() {
-        console.log('onDismiss');
         onDismiss?.();
         controller.popoverPresentationController.delegate = null;
         if (view && view.isLoaded) {
@@ -144,8 +140,13 @@ export function showPopover(
     if (hideArrow) {
         controller.popoverPresentationController.permittedArrowDirections = 0;
     }
+    controller.popoverPresentationController.canOverlapSourceViewRect = canOverlapSourceViewRect;
     if (transparent) {
         controller.popoverPresentationController.backgroundColor = UIColor.clearColor;
+    } else if (backgroundColor) {
+        controller.popoverPresentationController.backgroundColor = backgroundColor.ios;
+    } else if (view.style.backgroundColor) {
+        controller.popoverPresentationController.backgroundColor = view.style.backgroundColor.ios;
     }
     controller.popoverPresentationController.sourceView = anchor.nativeViewProtected;
     controller.popoverPresentationController.sourceRect = anchor.nativeViewProtected.bounds;

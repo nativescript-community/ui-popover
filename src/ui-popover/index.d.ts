@@ -11,6 +11,8 @@ export interface PopoverOptions {
     fitInScreen?: boolean; // Android
     outsideTouchable?: boolean;
     transparent?: boolean; // iOS
+    backgroundColor?: Color; // iOS
+    canOverlapSourceViewRect?: boolean; // iOS
     context?: any;
     hideArrow?: boolean; // iOS
     onDismiss?: Function;

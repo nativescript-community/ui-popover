@@ -49,5 +49,6 @@
         "url": "https://github.com/nativescript-community/ui-popover"
     },
     "license": "Apache-2.0",
-    "readmeFilename": "README.md"
+    "readmeFilename": "README.md",
+    "gitHead": "f9d831ea56805baf5e4a982fc5f60a897e44816e"
 }

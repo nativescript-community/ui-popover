@@ -1,7 +1,9 @@
 {
     "name": "@nativescript-community/template-snippet",
     "version": "0.1.6",
+    "private": true,
     "dependencies": {
-        "@nativescript-community/ui-popover": "file:../packages/ui-popover"
-    }
+        "@nativescript-community/ui-popover": "^0.1.6"
+    },
+    "gitHead": "f9d831ea56805baf5e4a982fc5f60a897e44816e"
 }

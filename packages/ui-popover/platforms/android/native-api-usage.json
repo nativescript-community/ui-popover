@@ -1,7 +1,7 @@
 {
     "uses": [
-        "com.nativescript.popover:RelativePopupWindow*",
-        "android.widget:PopupWindow*",
-        "android.view.ViewGroup:LayoutParams*"
+        "com.nativescript.popover:RelativePopupWindow",
+        "android.widget:PopupWindow",
+        "android.view:ViewGroup.LayoutParams*"
     ]
 }

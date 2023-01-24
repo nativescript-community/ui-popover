@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/nativescript-community/ui-popover/compare/v0.1.5...v0.1.6) (2023-01-24)
+
+
+### Bug Fixes
+
+* **android:** native-api-usage fix ([764af74](https://github.com/nativescript-community/ui-popover/commit/764af748e3f3fd84ff44c771eb9ebb1ecc665dce))
+
+
+
+
+
 ## [0.1.5](https://github.com/nativescript-community/ui-popover/compare/v0.1.4...v0.1.5) (2022-10-26)
 
 ### Bug Fixes

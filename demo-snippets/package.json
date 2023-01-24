@@ -1,6 +1,6 @@
 {
     "name": "@nativescript-community/template-snippet",
-    "version": "0.0.1",
+    "version": "0.1.6",
     "dependencies": {
         "@nativescript-community/ui-popover": "file:../packages/ui-popover"
     }

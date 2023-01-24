@@ -38,8 +38,8 @@
         ]
     },
     "dependencies": {
-        "@nativescript-community/template-snippet": "file:demo-snippets",
-        "@nativescript-community/plugin-seed-tools": "file:tools"
+        "@nativescript-community/plugin-seed-tools": "file:tools",
+        "@nativescript-community/template-snippet": "file:demo-snippets"
     },
     "ntl": {
         "descriptions": {

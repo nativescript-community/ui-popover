@@ -2,6 +2,7 @@
     "uses": [
         "com.nativescript.popover:RelativePopupWindow",
         "android.widget:PopupWindow",
+        "android.widget:PopupWindow.OnDismissListener",
         "android.view:ViewGroup.LayoutParams*"
     ]
 }

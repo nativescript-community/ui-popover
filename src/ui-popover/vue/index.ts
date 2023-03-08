@@ -59,12 +59,12 @@ const PopoverPlugin = {
 
                 return new Promise<void>(async (resolve, reject) => {
                     let resolved = false;
-                    const closeCallback = () => {
+                    const closeCallback = (result) => {
                         if (resolved) return;
                         resolved = true;
                         modalStack.pop();
                         options.onDismiss?.();
-                        resolve();
+                        resolve(result);
                         navEntryInstance.$emit('popover:close');
                         navEntryInstance.$destroy(); // don't let an exception in destroy kill the promise callback
                         navEntryInstance = null;
@@ -78,10 +78,10 @@ const PopoverPlugin = {
                 });
             });
         };
-        Vue.prototype.$closePopover = function (...args) {
+        Vue.prototype.$closePopover = function (result) {
             const modalPageInstanceInfo = modalStack[modalStack.length - 1];
             if (modalPageInstanceInfo) {
-                modalPageInstanceInfo.dismiss();
+                modalPageInstanceInfo.close(result);
             }
         };
     }

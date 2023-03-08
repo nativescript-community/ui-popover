@@ -106,23 +106,24 @@ export function showPopover(
     const parentWithController = IOSHelper.getParentWithViewController(anchor);
     if (!parentWithController) {
         Trace.write(`Could not find parent with viewController for ${parent} while showing bottom sheet view.`, Trace.categories.ViewHierarchy, Trace.messageType.error);
-        return;
+        throw new Error('missing_parent_controller');
     }
 
     const parentController = parentWithController.viewController;
     if (parentController.presentedViewController) {
         Trace.write('Parent is already presenting view controller. Close the current bottom sheet page before showing another one!', Trace.categories.ViewHierarchy, Trace.messageType.error);
-        return;
+        throw new Error('parent_controller_alreading_presenting');
     }
 
     if (!parentController.view || !parentController.view.window) {
         Trace.write('Parent page is not part of the window hierarchy.', Trace.categories.ViewHierarchy, Trace.messageType.error);
-        return;
+        throw new Error('parent_controller_different_window');
     }
     const controller = PopoverViewController.initWithOwner(new WeakRef(view));
     view.viewController = controller;
+    let result;
     function _onDismiss() {
-        onDismiss?.();
+        onDismiss?.(result);
         controller.popoverPresentationController.delegate = null;
         if (view && view.isLoaded) {
             view.callUnloaded();
@@ -151,4 +152,11 @@ export function showPopover(
     controller.popoverPresentationController.sourceView = anchor.nativeViewProtected;
     controller.popoverPresentationController.sourceRect = anchor.nativeViewProtected.bounds;
     parentWithController.viewController.presentModalViewControllerAnimated(controller, true);
+    return {
+        ios: controller,
+        close: (r) => {
+            result = r;
+            parentController.dismissViewControllerAnimatedCompletion(true, _onDismiss);
+        }
+    };
 }

@@ -15,11 +15,12 @@ export function showPopover(
     const window = new (com as any).nativescript.popover.RelativePopupWindow(view.nativeViewProtected, size, size, true);
     window.setOutsideTouchable(outsideTouchable);
     window.setBackgroundDrawable(null);
+    let result;
     window.setOnDismissListener(
         new android.widget.PopupWindow.OnDismissListener({
             onDismiss() {
                 if (onDismiss) {
-                    onDismiss();
+                    onDismiss(result);
                 }
                 if (view && view.isLoaded) {
                     view.callUnloaded();
@@ -32,7 +33,8 @@ export function showPopover(
     window.showOnAnchor(anchor.nativeViewProtected, vertPos, horizPos, x, y, fitInScreen);
     return {
         android: window,
-        close: () => {
+        close: (r) => {
+            result = r;
             window.dismiss();
         }
     };

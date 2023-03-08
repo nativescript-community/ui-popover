@@ -25,7 +25,7 @@ export function resolveComponentElement(viewSpec: ViewSpec, props?: any): Compon
     return { element, viewInstance };
 }
 
-export function showPopover(modalOptions: PopoverOptions) {
+export function showPopover<T>(modalOptions: PopoverOptions) {
     const { view, anchor, props = {}, ...options } = modalOptions;
     // Get this before any potential new frames are created by component below
     const anchorView: View = anchor instanceof View ? anchor : anchor.nativeView;
@@ -39,14 +39,14 @@ export function showPopover(modalOptions: PopoverOptions) {
     //     modalView = gestureView;
     // }
 
-    return new Promise<void>(async (resolve, reject) => {
+    return new Promise<T>(async (resolve, reject) => {
         let resolved = false;
-        const closeCallback = () => {
+        const closeCallback = (result) => {
             if (resolved) return;
             options.onDismiss?.();
             modalStack.pop();
             resolved = true;
-            resolve();
+            resolve(result);
             componentInstanceInfo.viewInstance.$destroy(); // don't let an exception in destroy kill the promise callback
         };
         try {
@@ -61,7 +61,7 @@ export function showPopover(modalOptions: PopoverOptions) {
 export function closePopover(result?: any): void {
     const modalPageInstanceInfo = modalStack[modalStack.length - 1];
     if (modalPageInstanceInfo) {
-        modalPageInstanceInfo.dismiss();
+        modalPageInstanceInfo.close(result);
     }
 }
 export function isPopoverOpened() {

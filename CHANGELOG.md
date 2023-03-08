@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.8](https://github.com/nativescript-community/ui-popover/compare/v0.1.7...v0.1.8) (2023-03-08)
+
+
+### Bug Fixes
+
+* **android:** native api usage ([a28a401](https://github.com/nativescript-community/ui-popover/commit/a28a40161e2b5bc12637219456492833f4aa37d0))
+
+
+### Features
+
+* support closing with a return value ([67cc076](https://github.com/nativescript-community/ui-popover/commit/67cc07686079f91103c0126c40b7300e36224332))
+
+
+
+
+
 ## [0.1.7](https://github.com/nativescript-community/ui-popover/compare/v0.1.6...v0.1.7) (2023-01-24)
 
 **Note:** Version bump only for package ui-popover

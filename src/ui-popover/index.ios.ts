@@ -1,5 +1,5 @@
 import { Color, IOSHelper, Screen, Trace, Utils, View } from '@nativescript/core';
-import { HorizontalPosition, PopoverOptions, VerticalPosition } from '.';
+import { HorizontalPosition, PopoverOptions, VerticalPosition, _commonPopoverDismissed, _commonShowNativePopover } from '.';
 
 export * from './index.common';
 
@@ -103,6 +103,7 @@ export function showPopover(
         hideArrow = false
     }: PopoverOptions
 ) {
+    _commonShowNativePopover(view);
     const parentWithController = IOSHelper.getParentWithViewController(anchor);
     if (!parentWithController) {
         Trace.write(`Could not find parent with viewController for ${parent} while showing bottom sheet view.`, Trace.categories.ViewHierarchy, Trace.messageType.error);
@@ -128,6 +129,7 @@ export function showPopover(
         if (view && view.isLoaded) {
             view.callUnloaded();
         }
+        _commonPopoverDismissed(view);
         view._isAddedToNativeVisualTree = false;
         view._tearDownUI();
     }
@@ -139,7 +141,7 @@ export function showPopover(
         });
     }
     if (hideArrow) {
-        controller.popoverPresentationController.permittedArrowDirections = 0;
+        controller.popoverPresentationController.permittedArrowDirections = 0 as any;
     }
     controller.popoverPresentationController.canOverlapSourceViewRect = canOverlapSourceViewRect;
     if (transparent) {

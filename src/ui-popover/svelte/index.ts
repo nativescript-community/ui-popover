@@ -5,11 +5,11 @@ import type { PopoverOptions as IPopoverOptions } from '..';
 // eslint-disable-next-line no-duplicate-imports
 import { showPopover as nativeShowPopover } from '..';
 
-type ViewSpec = typeof SvelteComponent;
-export interface PopoverOptions extends Omit<IPopoverOptions, 'anchor'> {
-    view: ViewSpec;
+type ViewSpec<T> = typeof SvelteComponent<T>;
+export interface PopoverOptions<T> extends Omit<IPopoverOptions, 'anchor'> {
+    view: ViewSpec<T>;
     anchor?: NativeViewElementNode<View> | View;
-    props?: any;
+    props?: T;
 }
 interface ComponentInstanceInfo {
     element: NativeViewElementNode<View>;
@@ -18,14 +18,14 @@ interface ComponentInstanceInfo {
 
 const modalStack: any[] = [];
 
-export function resolveComponentElement(viewSpec: ViewSpec, props?: any): ComponentInstanceInfo {
+export function resolveComponentElement<T = any>(viewSpec: ViewSpec<T>, props?: any): ComponentInstanceInfo {
     const dummy = createElement('fragment', window.document as any);
     const viewInstance = new viewSpec({ target: dummy, props });
     const element = dummy.firstElement() as NativeViewElementNode<View>;
     return { element, viewInstance };
 }
 
-export function showPopover<T>(modalOptions: PopoverOptions) {
+export function showPopover<T, U>(modalOptions: PopoverOptions<U>) {
     const { view, anchor, props = {}, ...options } = modalOptions;
     // Get this before any potential new frames are created by component below
     const anchorView: View = anchor instanceof View ? anchor : anchor.nativeView;

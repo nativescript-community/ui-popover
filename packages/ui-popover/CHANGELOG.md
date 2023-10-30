@@ -3,43 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.10](https://github.com/nativescript-community/ui-popover/compare/v0.1.9...v0.1.10) (2023-10-30)
+
+**Note:** Version bump only for package @nativescript-community/ui-popover
+
 ## [0.1.9](https://github.com/nativescript-community/ui-popover/compare/v0.1.8...v0.1.9) (2023-07-05)
 
 **Note:** Version bump only for package @nativescript-community/ui-popover
 
-
-
-
-
 ## [0.1.8](https://github.com/nativescript-community/ui-popover/compare/v0.1.7...v0.1.8) (2023-03-08)
-
 
 ### Bug Fixes
 
 * **android:** native api usage ([a28a401](https://github.com/nativescript-community/ui-popover/commit/a28a40161e2b5bc12637219456492833f4aa37d0))
 
-
-
-
-
 ## [0.1.7](https://github.com/nativescript-community/ui-popover/compare/v0.1.6...v0.1.7) (2023-01-24)
 
 **Note:** Version bump only for package @nativescript-community/ui-popover
 
-
-
-
-
 ## [0.1.6](https://github.com/nativescript-community/ui-popover/compare/v0.1.5...v0.1.6) (2023-01-24)
-
 
 ### Bug Fixes
 
 * **android:** native-api-usage fix ([764af74](https://github.com/nativescript-community/ui-popover/commit/764af748e3f3fd84ff44c771eb9ebb1ecc665dce))
-
-
-
-
 
 ## [0.1.5](https://github.com/nativescript-community/ui-popover/compare/v0.1.4...v0.1.5) (2022-10-26)
 

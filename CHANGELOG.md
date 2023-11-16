@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.11](https://github.com/nativescript-community/ui-popover/compare/v0.1.10...v0.1.11) (2023-11-16)
+
+### Bug Fixes
+
+* allow to access `ns-root` css variables ([b00b5c2](https://github.com/nativescript-community/ui-popover/commit/b00b5c2c9e38ca0aef64ca189a45e79f632d087d))
+
 ## [0.1.10](https://github.com/nativescript-community/ui-popover/compare/v0.1.9...v0.1.10) (2023-10-30)
 
 ### Bug Fixes

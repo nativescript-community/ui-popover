@@ -1,4 +1,4 @@
-import { View } from '@nativescript/core';
+import { Application, View } from '@nativescript/core';
 import { HorizontalPosition, PopoverOptions, VerticalPosition, _commonPopoverDismissed, _commonShowNativePopover } from '.';
 
 export * from './index.common';
@@ -11,6 +11,7 @@ export function showPopover(
     _commonShowNativePopover(view);
     const size = -2; //android.view.ViewGroup.LayoutParams.WRAP_CONTENT
     view._setupAsRootView(context);
+    view.parent = Application.getRootView();
     view._isAddedToNativeVisualTree = true;
     view.callLoaded();
     const window = new (com as any).nativescript.popover.RelativePopupWindow(view.nativeViewProtected, size, size, true);
@@ -29,6 +30,7 @@ export function showPopover(
                 view._isAddedToNativeVisualTree = false;
                 _commonPopoverDismissed(view);
                 view._tearDownUI();
+                view.parent = null;
             }
         })
     );

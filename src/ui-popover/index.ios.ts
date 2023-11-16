@@ -1,4 +1,4 @@
-import { Color, IOSHelper, Screen, Trace, Utils, View } from '@nativescript/core';
+import { Application, Color, IOSHelper, Screen, Trace, Utils, View } from '@nativescript/core';
 import { HorizontalPosition, PopoverOptions, VerticalPosition, _commonPopoverDismissed, _commonShowNativePopover } from '.';
 
 export * from './index.common';
@@ -77,6 +77,7 @@ class UIViewAutoSizeUIViewAutoSize extends UIView {
 function createUIViewAutoSizeUIViewAutoSize(view: View) {
     const self = UIViewAutoSizeUIViewAutoSize.new() as UIViewAutoSizeUIViewAutoSize;
     view._setupAsRootView({});
+    view.parent = Application.getRootView();
     view._isAddedToNativeVisualTree = true;
     view.callLoaded();
     self._view = new WeakRef(view);
@@ -132,6 +133,7 @@ export function showPopover(
         _commonPopoverDismissed(view);
         view._isAddedToNativeVisualTree = false;
         view._tearDownUI();
+        view.parent = null;
     }
     controller.modalPresentationStyle = UIModalPresentationStyle.Popover;
     if (!controller.popoverPresentationController.delegate) {

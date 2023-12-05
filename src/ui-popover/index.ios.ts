@@ -105,21 +105,17 @@ export function showPopover(
     }: PopoverOptions
 ) {
     _commonShowNativePopover(view);
-    const parentWithController = IOSHelper.getParentWithViewController(anchor);
+    let parentWithController = IOSHelper.getParentWithViewController(anchor);
     if (!parentWithController) {
         Trace.write(`Could not find parent with viewController for ${parent} while showing bottom sheet view.`, Trace.categories.ViewHierarchy, Trace.messageType.error);
         throw new Error('missing_parent_controller');
     }
 
-    const parentController = parentWithController.viewController;
-    if (parentController.presentedViewController) {
-        Trace.write('Parent is already presenting view controller. Close the current bottom sheet page before showing another one!', Trace.categories.ViewHierarchy, Trace.messageType.error);
-        throw new Error('parent_controller_alreading_presenting');
-    }
-
-    if (!parentController.view || !parentController.view.window) {
-        Trace.write('Parent page is not part of the window hierarchy.', Trace.categories.ViewHierarchy, Trace.messageType.error);
-        throw new Error('parent_controller_different_window');
+    let parentController = parentWithController.viewController;
+    // we loop to ensure we are showing from the top presented view controller
+    while (parentController.presentedViewController) {
+        parentController = parentController.presentedViewController;
+        parentWithController = parentWithController['_modal'] || parentWithController;
     }
     const controller = PopoverViewController.initWithOwner(new WeakRef(view));
     view.viewController = controller;

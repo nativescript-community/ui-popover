@@ -154,9 +154,14 @@ export function showPopover(
     parentWithController.viewController.presentModalViewControllerAnimated(controller, true);
     return {
         ios: controller,
-        close: (r) => {
+        close: async (r) => {
             result = r;
-            parentController.dismissViewControllerAnimatedCompletion(true, _onDismiss);
+            return new Promise<void>((resolve) => {
+                parentController.dismissViewControllerAnimatedCompletion(true, () => {
+                    _onDismiss();
+                    resolve();
+                });
+            });
         }
     };
 }

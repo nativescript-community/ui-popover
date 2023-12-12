@@ -37,7 +37,7 @@ export function showPopover(
     window.showOnAnchor(anchor.nativeViewProtected, vertPos, horizPos, x, y, fitInScreen);
     return {
         android: window,
-        close: (r) => {
+        close: async (r) => {
             result = r;
             window.dismiss();
         }

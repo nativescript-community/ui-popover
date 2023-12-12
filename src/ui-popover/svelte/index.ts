@@ -58,10 +58,10 @@ export function showPopover<T, U>(modalOptions: PopoverOptions<U>) {
     });
 }
 
-export function closePopover(result?: any): void {
+export async function closePopover(result?: any) {
     const modalPageInstanceInfo = modalStack[modalStack.length - 1];
     if (modalPageInstanceInfo) {
-        modalPageInstanceInfo.close(result);
+        return modalPageInstanceInfo.close(result);
     }
 }
 export function isPopoverOpened() {

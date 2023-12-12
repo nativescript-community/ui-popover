@@ -78,10 +78,10 @@ const PopoverPlugin = {
                 });
             });
         };
-        Vue.prototype.$closePopover = function (result) {
+        Vue.prototype.$closePopover = async function (result) {
             const modalPageInstanceInfo = modalStack[modalStack.length - 1];
             if (modalPageInstanceInfo) {
-                modalPageInstanceInfo.close(result);
+                return modalPageInstanceInfo.close(result);
             }
         };
     }

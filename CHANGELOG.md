@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.12](https://github.com/nativescript-community/ui-popover/compare/v0.1.11...v0.1.12) (2023-12-12)
+
+### Bug Fixes
+
+* **ios:** find parent the right way ([54f8e7a](https://github.com/nativescript-community/ui-popover/commit/54f8e7aca9a38ccb6001b1e4686841495929f787))
+* made `closePopover` async so that you can be sure you can open a new modal on iOS ([ca9be85](https://github.com/nativescript-community/ui-popover/commit/ca9be8502ffcc3d410ba427c241bbc4737ae146e))
+
 ## [0.1.11](https://github.com/nativescript-community/ui-popover/compare/v0.1.10...v0.1.11) (2023-11-16)
 
 ### Bug Fixes

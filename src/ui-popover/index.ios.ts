@@ -32,7 +32,7 @@ class UIPopoverPresentationControllerDelegateImpl extends NSObject implements UI
 @NativeClass
 class PopoverViewController extends UIViewController {
     public owner: WeakRef<View>;
-
+    public nBackgroundColor: UIColor;
     public static initWithOwner(owner: WeakRef<View>): PopoverViewController {
         const controller = PopoverViewController.new() as PopoverViewController;
         controller.owner = owner;
@@ -46,6 +46,12 @@ class PopoverViewController extends UIViewController {
         super.viewDidLoad();
         const size = this.view.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize);
         this.preferredContentSize = size;
+    }
+    viewWillAppear(animated: boolean) {
+        if (this.nBackgroundColor) {
+            this.view.superview.backgroundColor = this.nBackgroundColor;
+        }
+        super.viewWillAppear(animated);
     }
 }
 
@@ -138,15 +144,17 @@ export function showPopover(
             onDismiss: _onDismiss
         });
     }
-    if (hideArrow) {
+    if (hideArrow || transparent) {
         controller.popoverPresentationController.permittedArrowDirections = 0 as any;
     }
     controller.popoverPresentationController.canOverlapSourceViewRect = canOverlapSourceViewRect;
     if (transparent) {
-        controller.popoverPresentationController.backgroundColor = UIColor.clearColor;
+        controller.nBackgroundColor = UIColor.clearColor;
     } else if (backgroundColor) {
-        controller.popoverPresentationController.backgroundColor = backgroundColor.ios;
+        controller.nBackgroundColor = (backgroundColor instanceof Color ? backgroundColor : new Color(backgroundColor)).ios;
+        // controller.popoverPresentationController.backgroundColor = backgroundColor.ios;
     } else if (view.style.backgroundColor) {
+        controller.nBackgroundColor = view.style.backgroundColor.ios;
         controller.popoverPresentationController.backgroundColor = view.style.backgroundColor.ios;
     }
     controller.popoverPresentationController.sourceView = anchor.nativeViewProtected;

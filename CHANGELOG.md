@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.13](https://github.com/nativescript-community/ui-popover/compare/v0.1.12...v0.1.13) (2023-12-12)
+
+### Bug Fixes
+
+* **ios:** working backgroundColor ([c055336](https://github.com/nativescript-community/ui-popover/commit/c05533621ec56ac4309ce55a0671d09408bb8a5d))
+
 ## [0.1.12](https://github.com/nativescript-community/ui-popover/compare/v0.1.11...v0.1.12) (2023-12-12)
 
 ### Bug Fixes

@@ -5,5 +5,11 @@
             "@nativescript-community/ui-popover": ["src/ui-popover"],
             "@nativescript-community/ui-popover/*": ["src/ui-popover/*"]
         }
-    }
+    },
+    "references": [
+        {
+            //Need for IDE
+            "path": "./tsconfig.vue3.json"
+        }
+    ]
 }

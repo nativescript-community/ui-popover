@@ -1,0 +1,14 @@
+{    
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+       "composite": true,
+       "paths": {
+            "nativescript-vue": ["./node_modules/nativescript-vue3"]
+       }
+    },
+    "include": [
+        "./src/ui-popover/vue3", 
+        "./packages/ui-popover/vue3", 
+        "./demo-snippets/vue3"
+    ]
+}

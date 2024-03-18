@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.15](https://github.com/nativescript-community/ui-popover/compare/v0.1.14...v0.1.15) (2024-03-18)
+
+### Bug Fixes
+
+* **ios:** allow any popover size ([fa664b7](https://github.com/nativescript-community/ui-popover/commit/fa664b797e918367ee82201a7ef2955410a58798))
+
 ## [0.1.14](https://github.com/nativescript-community/ui-popover/compare/v0.1.13...v0.1.14) (2024-03-15)
 
 **Note:** Version bump only for package ui-popover

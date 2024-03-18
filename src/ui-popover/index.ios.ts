@@ -44,7 +44,7 @@ class PopoverViewController extends UIViewController {
     }
     viewDidLoad(): void {
         super.viewDidLoad();
-        const size = this.view.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize);
+        const size = this.view.systemLayoutSizeFittingSize(UILayoutFittingExpandedSize);
         this.preferredContentSize = size;
     }
     viewWillAppear(animated: boolean) {

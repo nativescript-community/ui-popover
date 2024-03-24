@@ -14,7 +14,7 @@ class UIPopoverPresentationControllerDelegateImpl extends NSObject implements UI
         return delegate;
     }
 
-    adaptivePresentationStyleForPresentationController?(controller: UIPresentationController): UIModalPresentationStyle {
+    adaptivePresentationStyleForPresentationControllerTraitCollection(controller: UIPresentationController, traitCollection): UIModalPresentationStyle {
         return UIModalPresentationStyle.None;
     }
 

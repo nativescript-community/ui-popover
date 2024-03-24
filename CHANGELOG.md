@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.16](https://github.com/nativescript-community/ui-popover/compare/v0.1.15...v0.1.16) (2024-03-24)
+
+### Bug Fixes
+
+* **ios:** popover fix in landscape ([f9d0037](https://github.com/nativescript-community/ui-popover/commit/f9d00373577b0d0c82eaf198a45f3f6f069a45fd))
+
 ## [0.1.15](https://github.com/nativescript-community/ui-popover/compare/v0.1.14...v0.1.15) (2024-03-18)
 
 ### Bug Fixes

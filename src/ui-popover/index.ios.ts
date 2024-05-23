@@ -44,6 +44,7 @@ class PopoverViewController extends UIViewController {
     }
     viewDidLoad(): void {
         super.viewDidLoad();
+        this.owner.get()?.callLoaded();
         const size = this.view.systemLayoutSizeFittingSize(UILayoutFittingExpandedSize);
         this.preferredContentSize = size;
     }
@@ -85,7 +86,8 @@ function createUIViewAutoSizeUIViewAutoSize(view: View) {
     view._setupAsRootView({});
     view.parent = Application.getRootView();
     view._isAddedToNativeVisualTree = true;
-    view.callLoaded();
+    // view.callLoaded(); // will be called in viewDidLoad. doing it here would trigger requestLayout before
+    // controller view is set and thus call loadView again
     self._view = new WeakRef(view);
     self.addSubview(view.nativeViewProtected);
     (view.nativeViewProtected as UIView).autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;

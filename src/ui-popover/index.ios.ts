@@ -147,9 +147,6 @@ export function showPopover(
             onDismiss: _onDismiss
         });
     }
-    if (hideArrow || transparent) {
-        controller.popoverPresentationController.permittedArrowDirections = 0 as any;
-    }
     //@ts-ignore
     controller.popoverPresentationController.passthroughViews = passthroughViews?.map((v) => v?.nativeViewProtected).filter((v) => !!v);
     controller.popoverPresentationController.canOverlapSourceViewRect = canOverlapSourceViewRect;
@@ -162,8 +159,26 @@ export function showPopover(
         controller.nBackgroundColor = view.style.backgroundColor.ios;
         controller.popoverPresentationController.backgroundColor = view.style.backgroundColor.ios;
     }
+    const bounds = anchor.nativeViewProtected.bounds;
+    const width = bounds.size.width;
+    const height = bounds.size.height;
+    const deltaX = 0;
+    const deltaY = 0;
+    if (hideArrow || transparent) {
+        controller.popoverPresentationController.permittedArrowDirections = 0 as any;
+        //     deltaX = Utils.layout.toDeviceIndependentPixels(x);
+        //     switch (horizPos) {
+        //         case HorizontalPosition.ALIGN_LEFT:
+        //             deltaX -= width / 2;
+        //             break;
+        //         case HorizontalPosition.ALIGN_RIGHT:
+        //             deltaX += width / 2;
+        //             break;
+        //     }
+    }
     controller.popoverPresentationController.sourceView = anchor.nativeViewProtected;
-    controller.popoverPresentationController.sourceRect = CGRectOffset(anchor.nativeViewProtected.bounds as CGRect, x, y);
+    controller.popoverPresentationController.sourceRect = CGRectOffset(bounds, Math.min(deltaX, width / 2), Math.min(deltaY, height / 2));
+
     parentWithController.viewController.presentModalViewControllerAnimated(controller, true);
     return {
         ios: controller,

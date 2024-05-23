@@ -5,7 +5,7 @@ export * from './index.common';
 
 export function showPopover(
     view: View,
-    { anchor, vertPos = VerticalPosition.BELOW, horizPos = HorizontalPosition.CENTER, x = 0, y = 0, fitInScreen = true, onDismiss, outsideTouchable = true }: PopoverOptions
+    { anchor, vertPos = VerticalPosition.BELOW, horizPos = HorizontalPosition.CENTER, x = 0, y = 0, fitInScreen = true, onDismiss, outsideTouchable = true, focusable = true }: PopoverOptions
 ) {
     const context = anchor._context;
     _commonShowNativePopover(view);
@@ -14,8 +14,9 @@ export function showPopover(
     view.parent = Application.getRootView();
     view._isAddedToNativeVisualTree = true;
     view.callLoaded();
-    const window = new (com as any).nativescript.popover.RelativePopupWindow(view.nativeViewProtected, size, size, true);
+    const window = new (com as any).nativescript.popover.RelativePopupWindow(view.nativeViewProtected, size, size, true) as android.widget.PopupWindow;
     window.setOutsideTouchable(outsideTouchable);
+    window.setFocusable(focusable);
     window.setBackgroundDrawable(null);
     let result;
     window.setOnDismissListener(
@@ -34,7 +35,7 @@ export function showPopover(
             }
         })
     );
-    window.showOnAnchor(anchor.nativeViewProtected, vertPos, horizPos, x, y, fitInScreen);
+    (window as any).showOnAnchor(anchor.nativeViewProtected, vertPos, horizPos, x, y, fitInScreen);
     return {
         android: window,
         close: async (r) => {

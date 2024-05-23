@@ -25,7 +25,7 @@ class UIPopoverPresentationControllerDelegateImpl extends NSObject implements UI
     }
 
     popoverPresentationControllerShouldDismissPopover(popoverPresentationController: UIPopoverPresentationController): any {
-        return !this._options?.outsideTouchable;
+        return this._options?.outsideTouchable;
     }
 }
 
@@ -105,9 +105,10 @@ export function showPopover(
         fitInScreen = true,
         transparent = false,
         onDismiss,
-        outsideTouchable = false,
+        outsideTouchable = true,
         backgroundColor,
         canOverlapSourceViewRect = false,
+        passthroughViews = null,
         context = {},
         hideArrow = false
     }: PopoverOptions
@@ -149,6 +150,8 @@ export function showPopover(
     if (hideArrow || transparent) {
         controller.popoverPresentationController.permittedArrowDirections = 0 as any;
     }
+    //@ts-ignore
+    controller.popoverPresentationController.passthroughViews = passthroughViews?.map((v) => v?.nativeViewProtected).filter((v) => !!v);
     controller.popoverPresentationController.canOverlapSourceViewRect = canOverlapSourceViewRect;
     if (transparent) {
         controller.nBackgroundColor = UIColor.clearColor;
@@ -160,7 +163,7 @@ export function showPopover(
         controller.popoverPresentationController.backgroundColor = view.style.backgroundColor.ios;
     }
     controller.popoverPresentationController.sourceView = anchor.nativeViewProtected;
-    controller.popoverPresentationController.sourceRect = anchor.nativeViewProtected.bounds;
+    controller.popoverPresentationController.sourceRect = CGRectOffset(anchor.nativeViewProtected.bounds as CGRect, x, y);
     parentWithController.viewController.presentModalViewControllerAnimated(controller, true);
     return {
         ios: controller,

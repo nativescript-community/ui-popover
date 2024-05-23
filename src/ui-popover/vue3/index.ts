@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
 interface VuePopoverOptions {
     anchor: View;
     props?: any;
+    on?: Record<string, (...args: any[]) => any>;
     vertPos?: VerticalPosition; // Android
     horizPos?: HorizontalPosition; // Android
     x?: number;
@@ -30,11 +31,16 @@ interface VuePopoverOptions {
 const modalStack: any[] = [];
 
 function _showPopover(component: Component, options: VuePopoverOptions): Promise<void> {
+    const listeners = Object.entries(options?.on ?? {}).reduce((listeners, [key, value]) => {
+        listeners['on' + key.charAt(0).toUpperCase() + key.slice(1)] = value;
+        return listeners;
+      }, {} as { [key: string]: (...args: any[]) => any });
+    
+    const propsAndListeners = Object.assign(options?.props ?? {}, listeners);
+
     let navEntryInstance = createNativeView(
         component,
-        Object.assign(
-            options.props ?? {},
-        )
+        propsAndListeners
     )
     navEntryInstance.mount();
     const p = new Promise<void>(async (resolve, reject) => {

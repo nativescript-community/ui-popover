@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.18](https://github.com/nativescript-community/ui-popover/compare/v0.1.17...v0.1.18) (2024-05-23)
+
+### Features
+
+* new options ([1241890](https://github.com/nativescript-community/ui-popover/commit/12418905bde595058c7a51c7096abbcd7796c09c))
+
+## [0.1.17](https://github.com/nativescript-community/ui-popover/compare/v0.1.16...v0.1.17) (2024-04-10)
+
+### Features
+
+* ability to emit and listen to component events ([7ec49be](https://github.com/nativescript-community/ui-popover/commit/7ec49be1bfc4781f412878df463b165768ce2324))
+
 ## [0.1.16](https://github.com/nativescript-community/ui-popover/compare/v0.1.15...v0.1.16) (2024-03-24)
 
 ### Bug Fixes

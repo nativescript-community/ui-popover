@@ -1,5 +1,5 @@
 import { HorizontalPosition, VerticalPosition } from './index.common';
-import { View } from '@nativescript/core';
+import { Color, View } from '@nativescript/core';
 export * from './index.common';
 
 export interface PopoverOptions {
@@ -12,7 +12,7 @@ export interface PopoverOptions {
     outsideTouchable?: boolean;
     focusable?: boolean; // Android
     transparent?: boolean; // iOS
-    backgroundColor?: Color; // iOS
+    backgroundColor?: Color | string; // iOS
     canOverlapSourceViewRect?: boolean; // iOS
     passthroughViews?: View[]; // iOS
     context?: any;

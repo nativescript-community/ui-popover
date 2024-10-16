@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.19](https://github.com/nativescript-community/ui-popover/compare/v0.1.18...v0.1.19) (2024-05-23)
+
+### Bug Fixes
+
+* **ios:** prevent errors in some cases ([0cb3dca](https://github.com/nativescript-community/ui-popover/commit/0cb3dcaaee16229b466fb8505370f0b18f506e2f))
+* **ios:** regression fix ([2e74b91](https://github.com/nativescript-community/ui-popover/commit/2e74b91f63b1aaba49a3f155c23fa5806fb240a0))
+
 ## [0.1.18](https://github.com/nativescript-community/ui-popover/compare/v0.1.17...v0.1.18) (2024-05-23)
 
 ### Features

@@ -7,6 +7,8 @@
        }
     },
     "include": [
+        "./src/ui-popover/vue3", 
+        "./packages/ui-popover/vue3",
         "./demo-snippets/vue3"
     ]
 }

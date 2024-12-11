@@ -1,5 +1,5 @@
 // import { GestureRootView } from '@nativescript-community/gesturehandler';
-import { View } from '@nativescript/core';
+import { View, ViewBase } from '@nativescript/core';
 import { NativeViewElementNode, createElement } from 'svelte-native/dom';
 import type { PopoverOptions as IPopoverOptions } from '..';
 // eslint-disable-next-line no-duplicate-imports
@@ -11,9 +11,9 @@ export interface PopoverOptions<T> extends Omit<IPopoverOptions, 'anchor'> {
     anchor?: NativeViewElementNode<View> | View;
     props?: T;
 }
-interface ComponentInstanceInfo {
-    element: NativeViewElementNode<View>;
-    viewInstance: SvelteComponent;
+export interface ComponentInstanceInfo<T extends ViewBase = View, U = SvelteComponent> {
+    element: NativeViewElementNode<T>;
+    viewInstance: U;
 }
 
 const modalStack: any[] = [];
@@ -25,7 +25,7 @@ export function resolveComponentElement<T = any>(viewSpec: ViewSpec<T>, props?: 
     return { element, viewInstance };
 }
 
-export function showPopover<T, U>(modalOptions: PopoverOptions<U>) {
+export function showPopover<T, U>(modalOptions: PopoverOptions<U>, onCreated?: (data: ComponentInstanceInfo) => void) {
     const { view, anchor, props = {}, ...options } = modalOptions;
     // Get this before any potential new frames are created by component below
     const anchorView: View = anchor instanceof View ? anchor : anchor.nativeView;
@@ -39,6 +39,7 @@ export function showPopover<T, U>(modalOptions: PopoverOptions<U>) {
     //     modalView = gestureView;
     // }
 
+    onCreated?.(componentInstanceInfo);
     return new Promise<T>(async (resolve, reject) => {
         let resolved = false;
         const closeCallback = (result) => {

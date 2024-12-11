@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.21](https://github.com/nativescript-community/ui-popover/compare/v0.1.20...v0.1.21) (2024-12-11)
+
+**Note:** Version bump only for package @nativescript-community/ui-popover
+
 ## [0.1.20](https://github.com/nativescript-community/ui-popover/compare/v0.1.19...v0.1.20) (2024-10-16)
 
 **Note:** Version bump only for package @nativescript-community/ui-popover

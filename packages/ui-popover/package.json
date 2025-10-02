@@ -1,6 +1,6 @@
 {
     "name": "@nativescript-community/ui-popover",
-    "version": "0.1.21",
+    "version": "0.1.22",
     "description": "Popover plugn",
     "main": "./index",
     "sideEffects": false,

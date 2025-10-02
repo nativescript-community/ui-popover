@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.22](https://github.com/nativescript-community/ui-popover/compare/v0.1.21...v0.1.22) (2025-10-02)
+
+### Bug Fixes
+
+* **ios:** allow other plugins that a popover controller is showing ([aa74d8b](https://github.com/nativescript-community/ui-popover/commit/aa74d8b6476c83bc6746877bc47c8cd2c6b2948c))
+
 ## [0.1.21](https://github.com/nativescript-community/ui-popover/compare/v0.1.20...v0.1.21) (2024-12-11)
 
 ### Bug Fixes

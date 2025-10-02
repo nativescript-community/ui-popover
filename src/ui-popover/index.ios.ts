@@ -127,6 +127,7 @@ export function showPopover(
         parentWithController = parentWithController['_modal'] || parentWithController;
     }
     const controller = PopoverViewController.initWithOwner(new WeakRef(view));
+    controller['isPopOverController'] = true;
     view.viewController = controller;
     let result;
     function _onDismiss() {

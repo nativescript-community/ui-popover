@@ -4,3 +4,6 @@
 [submodule "demo-svelte"]
 	path = demo-svelte
 	url = https://github.com/nativescript-community/plugin-seed-demo-svelte.git
+[submodule "demo-ng"]
+	path = demo-ng
+	url = https://github.com/nativescript-community/plugin-seed-demo-ng.git

@@ -41,6 +41,7 @@
 * [API](#api)
 	* [Using Svelte](#using-svelte)
 	* [Using Vue](#using-vue)
+	* [Using Angular](#using-angular)
 	* [Methods](#methods)
 * [Demos and Development](#demos-and-development)
 	* [Repo Setup](#repo-setup)
@@ -88,6 +89,20 @@ Run the following command from the root of your project:
   });
 ```
 
+### Using Angular
+```ts
+import { NativePopover, NativePopoverConfig} from '@nativescript-community/ui-popover/angular';
+
+@Component({})
+export class BasicPopoverComponent {
+  popover = inject(NativePopover);
+
+  showPopover(config: NativePopoverConfig) {
+    this.popover.open(PopoverContentComponent, config);
+  }
+}
+```
+
 ### Methods
 ```ts
  interface PopoverOptions {
@@ -101,10 +116,10 @@ Run the following command from the root of your project:
 }
 ```
 
-| Name         | Return | Description                                     |
-| ------------ | ------ | ----------------------------------------------- |
-| showPopover(options: PopoverOptions)       | `void` | Programatically open the popover                 |
-| closePopover(options: PopoverOptions)      | `void` | Programatically close the popover                |
+| Name                                  | Return   | Description                       |
+| ------------------------------------- | -------- | --------------------------------- |
+| showPopover(options: PopoverOptions)  | `void` | Programatically open the popover  |
+| closePopover(options: PopoverOptions) | `void` | Programatically close the popover |
 
 
 [](#demos-and-development)

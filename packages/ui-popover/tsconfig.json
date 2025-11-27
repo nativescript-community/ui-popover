@@ -1,19 +1,12 @@
 {
     "extends": "../../tsconfig.json",
     "compilerOptions": {
+        "composite": true,
         "rootDir": "../../src/ui-popover",
-        "outDir": "./",
-        "paths": {
-            "tns-core-modules": ["./node_modules/@nativescript/core"],
-            "tns-core-modules/*": ["./node_modules/@nativescript/core/*"]
-        }
+        "outDir": "./"
     },
-    "include": ["../../src/ui-popover/**/*", "../../references.d.ts", "../../tools/references.d.ts", "../../src/references.d.ts"],
-    "exclude": ["../../src/ui-popover/angular/**"],
-    "references": [
-        {
-            //Need for tsc
-            "path": "../../tsconfig.vue3.json"
-        }
-    ]
+    "include": ["../../src/ui-popover/**/*.ts", "../../references.d.ts", "../../tools/references.d.ts", "../../src/references.d.ts"],
+    "exclude": ["../../src/ui-popover/vue3/**/*", "../../src/ui-popover/angular/**"],
+    "references": [{ "path": "../../tsconfig.vue3.json" }]
+
 }

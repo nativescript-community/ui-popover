@@ -33,6 +33,20 @@ Run the following command from the root of your project:
   });
 ```
 
+### Using Angular
+```ts
+import { NativePopover, NativePopoverConfig} from '{{ pkg.name }}/angular';
+
+@Component({})
+export class BasicPopoverComponent {
+  popover = inject(NativePopover);
+
+  showPopover(config: NativePopoverConfig) {
+    this.popover.open(PopoverContentComponent, config);
+  }
+}
+```
+
 ### Methods
 ```ts
  interface PopoverOptions {
@@ -46,10 +60,10 @@ Run the following command from the root of your project:
 }
 ```
 
-| Name         | Return | Description                                     |
-| ------------ | ------ | ----------------------------------------------- |
-| showPopover(options: PopoverOptions)       | `void` | Programatically open the popover                 |
-| closePopover(options: PopoverOptions)      | `void` | Programatically close the popover                |
+| Name                                  | Return   | Description                       |
+| ------------------------------------- | -------- | --------------------------------- |
+| showPopover(options: PopoverOptions)  | `void` | Programatically open the popover  |
+| closePopover(options: PopoverOptions) | `void` | Programatically close the popover |
 
 {{ load:../../tools/readme/demos-and-development.md }}
 {{ load:../../tools/readme/questions.md }}

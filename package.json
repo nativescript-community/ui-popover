@@ -1,6 +1,7 @@
 {
     "version": "1.0.0",
     "homepage": "https://github.com/nativescript-community/ui-popover#readme",
+    "private": true,
     "bugs": {
         "url": "https://github.com/nativescript-community/ui-popover/issues"
     },
@@ -12,9 +13,13 @@
     "author": "",
     "scripts": {
         "build": "lerna run build",
-        "build.all": "npm run build",
-        "clean": "rimraf 'packages/**/*.d.ts' 'packages/**/*.js' 'packages/**/*.js.map' 'packages/**/*.metada' 'packages/**/angular/ng-package.json'",
+        "build.all": "lerna run build.all",
+        "build.angular": "lerna run build.angular",
+        "build.win": "lerna run build-win",
         "commitmsg": "commitlint -e $GIT_PARAMS",
+        "demo.ng.android": "cd ./demo-ng && ns run android --no-hmr --env.watchNodeModules",
+        "demo.ng.clean": "cd ./demo-ng && ns clean",
+        "demo.ng.ios": "cd ./demo-ng && ns run ios --no-hmr --env.watchNodeModules",
         "demo.svelte.android": "cd ./demo-svelte && ns run android --no-hmr --env.watchNodeModules",
         "demo.svelte.clean": "cd ./demo-svelte && ns clean",
         "demo.svelte.ios": "cd ./demo-svelte && ns run ios --no-hmr --env.watchNodeModules",
@@ -28,7 +33,8 @@
         "sync.test": "node ./tools/sync.js",
         "tsc": "cpy '**/*.d.ts' '../plugin' --parents --cwd=src && tsc -skipLibCheck -d",
         "update": "node ./tools/update.js",
-        "fullclean": "npm run clean && rimraf 'packages/**/node_modules' 'demo-*/hooks' 'demo-*/node_modules' 'package-lock.json' 'pnpm-lock.yaml' 'node_modules'",
+        "clean": "rimraf -g 'packages/**/*.d.ts' 'packages/**/*.tsbuildinfo' 'packages/**/*.js' 'packages/**/*.mjs' 'packages/**/*.js.map' 'packages/**/*.mjs.map' 'packages/**/*.metada' 'packages/**/angular/ng-package.json'",
+        "fullclean": "npm run clean && rimraf -g 'packages/**/node_modules' 'demo-*/hooks' 'demo-*/node_modules' 'package-lock.json' 'pnpm-lock.yaml' 'node_modules'",
         "doc": "node tools/builddoc.mjs",
         "commit_readme_doc_changes": "git add docs/** *.md ; git commit -m \"readme/doc\" ; echo \"commit readme doc done\""
     },
@@ -38,13 +44,17 @@
         ]
     },
     "dependencies": {
-        "@nativescript-community/plugin-seed-tools": "portal:tools"
+        "@nativescript-community/plugin-seed-tools": "portal:tools",
+        "@nativescript-community/template-snippet": "portal:demo-snippets"
     },
     "ntl": {
         "descriptions": {
             "build": "Build the plugin",
             "build.all": "Build the plugin for all platforms",
+            "build.angular": "Build the plugin for Angular",
             "clean": "Clean the local environment.",
+            "demo.ng.android": "Runs the Angular demo on Android.",
+            "demo.ng.ios": "Runs the Angular demo on iOS.",
             "demo.svelte.android": "Runs the Svelte demo on Android.",
             "demo.svelte.ios": "Runs the Svelte demo on iOS.",
             "watch": "Watch for changes in the plugin source and re-build."
@@ -60,5 +70,8 @@
         "pnpm": ">=7.0.0",
         "node": "^14.20.0 || ^16.13.0 || >=18.10.0"
     },
-    "packageManager": "yarn@4.10.2"
+    "packageManager": "yarn@4.10.3",
+    "devDependencies": {
+        "ng-packagr": "19.2.2"
+    }
 }

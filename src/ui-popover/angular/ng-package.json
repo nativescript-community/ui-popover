@@ -1,0 +1,7 @@
+{
+    "dest": "../../../packages/ui-popover/angular",
+    "lib": {
+        "entryFile": "index.ts"
+    },
+    "allowedNonPeerDependencies": ["."]
+}

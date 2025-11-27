@@ -1,7 +1,8 @@
 {
     "readme": true,
-    "angular": false,
+    "angular": true,
     "demos": [
+        "ng",
         "svelte"
     ]
 }

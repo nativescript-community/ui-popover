@@ -1,6 +1,6 @@
 // import { GestureRootView } from '@nativescript-community/gesturehandler';
 import { View, ViewBase } from '@nativescript/core';
-import { NativeViewElementNode, createElement } from 'svelte-native/dom';
+import { NativeViewElementNode, createElement } from '@nativescript-community/svelte-native/dom';
 import type { PopoverOptions as IPopoverOptions } from '..';
 // eslint-disable-next-line no-duplicate-imports
 import { showPopover as nativeShowPopover } from '..';

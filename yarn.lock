@@ -12,6 +12,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@akylas/nativescript@npm:8.9.15":
+  version: 8.9.15
+  resolution: "@akylas/nativescript@npm:8.9.15"
+  dependencies:
+    "@csstools/css-calc": "npm:~2.1.2"
+    "@csstools/css-color-parser": "npm:^3.0.8"
+    "@csstools/css-parser-algorithms": "npm:^3.0.4"
+    "@csstools/css-tokenizer": "npm:^3.0.3"
+    "@nativescript/hook": "npm:~2.0.0"
+    acorn: "npm:^8.7.0"
+    css-tree: "npm:^1.1.2"
+    css-what: "npm:^6.1.0"
+    emoji-regex: "npm:^10.3.0"
+    reduce-css-calc: "npm:^2.1.8"
+    tslib: "npm:^2.6.3"
+  checksum: 10/9c0d29807984240a587fc177c12aa0ac13ebf551b84843a18bd90f2037c0931f10b2c51b1109cdada4ed112d4bb8d9a2b608cbcc4e416bb292bfce48fb50a29b
+  languageName: node
+  linkType: hard
+
 "@ampproject/remapping@npm:^2.1.0":
   version: 2.2.0
   resolution: "@ampproject/remapping@npm:2.2.0"
@@ -861,7 +880,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/css-calc@npm:^2.1.4, @csstools/css-calc@npm:~2.1.4":
+"@csstools/css-calc@npm:^2.1.4, @csstools/css-calc@npm:~2.1.2, @csstools/css-calc@npm:~2.1.4":
   version: 2.1.4
   resolution: "@csstools/css-calc@npm:2.1.4"
   peerDependencies:
@@ -871,7 +890,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/css-color-parser@npm:^3.0.10":
+"@csstools/css-color-parser@npm:^3.0.10, @csstools/css-color-parser@npm:^3.0.8":
   version: 3.1.0
   resolution: "@csstools/css-color-parser@npm:3.1.0"
   dependencies:
@@ -884,7 +903,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/css-parser-algorithms@npm:^3.0.5":
+"@csstools/css-parser-algorithms@npm:^3.0.4, @csstools/css-parser-algorithms@npm:^3.0.5":
   version: 3.0.5
   resolution: "@csstools/css-parser-algorithms@npm:3.0.5"
   peerDependencies:
@@ -893,7 +912,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/css-tokenizer@npm:^3.0.4":
+"@csstools/css-tokenizer@npm:^3.0.3, @csstools/css-tokenizer@npm:^3.0.4":
   version: 3.0.4
   resolution: "@csstools/css-tokenizer@npm:3.0.4"
   checksum: 10/eb6c84c086312f6bb8758dfe2c85addd7475b0927333c5e39a4d59fb210b9810f8c346972046f95e60a721329cffe98895abe451e51de753ad1ca7a8c24ec65f
@@ -1996,6 +2015,16 @@ __metadata:
   languageName: node
   linkType: soft
 
+"@nativescript-community/svelte-native@npm:1.0.32":
+  version: 1.0.32
+  resolution: "@nativescript-community/svelte-native@npm:1.0.32"
+  peerDependencies:
+    "@nativescript/core": 8.9.9
+    svelte: 4.2.20
+  checksum: 10/989adb85587bb4e62501ffa1ba3365b63388a99d50d9c42138fa769a5b0354ec1493cef11d24d9a281b67e9c97246de4d11c5a2a1aafcd49ab1ebfabadcaad9a
+  languageName: node
+  linkType: hard
+
 "@nativescript-community/svelte-native@npm:4.0.0":
   version: 4.0.0
   resolution: "@nativescript-community/svelte-native@npm:4.0.0"
@@ -2006,7 +2035,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nativescript-community/template-snippet@workspace:demo-snippets":
+"@nativescript-community/template-snippet@npm:*, @nativescript-community/template-snippet@workspace:demo-snippets":
   version: 0.0.0-use.local
   resolution: "@nativescript-community/template-snippet@workspace:demo-snippets"
   dependencies:
@@ -2014,11 +2043,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@nativescript-community/ui-material-core@npm:^7.3.2":
+  version: 7.3.4
+  resolution: "@nativescript-community/ui-material-core@npm:7.3.4"
+  checksum: 10/608a4010f4aff450c80ff6de901bea4ff1bd84cb2d96ffc9bd6cfd9bd47388157c95442a5be321c8a33df966317def259b0161bd1afd04854c1a8a8cff36c71e
+  languageName: node
+  linkType: hard
+
 "@nativescript-community/ui-popover@npm:*, @nativescript-community/ui-popover@workspace:packages/ui-popover":
   version: 0.0.0-use.local
   resolution: "@nativescript-community/ui-popover@workspace:packages/ui-popover"
   languageName: unknown
   linkType: soft
+
+"@nativescript/android@npm:8.9.2":
+  version: 8.9.2
+  resolution: "@nativescript/android@npm:8.9.2"
+  checksum: 10/1cfc34f2a90203d62a7638338d817fce43cfdc15ee5273904ec9b0bb405e419eb29365ea87da95be3dd1685a0e2765e2bb4133d0cf48227048bc6f4f9fcd81f8
+  languageName: node
+  linkType: hard
 
 "@nativescript/angular@npm:19.0.1":
   version: 19.0.1
@@ -2027,6 +2070,26 @@ __metadata:
     "@nativescript/zone-js": "npm:^3.0.4"
     tslib: "npm:^2.3.0"
   checksum: 10/de914fc45554f3e5b7e7f541d378e141cd2e5f176ab8210d1198a515af4f4386acc98cb7eb17046b0893d3f91b310b0b88a970264260955abd96597d82d161d6
+  languageName: node
+  linkType: hard
+
+"@nativescript/core@npm:9.0.20":
+  version: 9.0.20
+  resolution: "@nativescript/core@npm:9.0.20"
+  dependencies:
+    "@csstools/css-calc": "npm:~2.1.4"
+    "@csstools/css-color-parser": "npm:^3.0.10"
+    "@csstools/css-parser-algorithms": "npm:^3.0.5"
+    "@csstools/css-tokenizer": "npm:^3.0.4"
+    "@nativescript/hook": "npm:~3.0.4"
+    acorn: "npm:^8.15.0"
+    css-tree: "npm:^3.1.0"
+    css-what: "npm:^7.0.0"
+    emoji-regex: "npm:^10.2.1"
+    source-map: "npm:0.7.6"
+    source-map-js: "npm:^1.2.1"
+    tslib: "npm:^2.0.0"
+  checksum: 10/f17d8cff0630b79cc35d21ca6d93fe1c70fc3acbbb228b4f1fa903648e60566facb307a6c652781fdca7acddec8ae12b35d1bcf2e63d7fa4af599c7176ef7362
   languageName: node
   linkType: hard
 
@@ -2051,10 +2114,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nativescript/hook@npm:~2.0.0":
+  version: 2.0.0
+  resolution: "@nativescript/hook@npm:2.0.0"
+  dependencies:
+    glob: "npm:^7.1.0"
+    mkdirp: "npm:^1.0.4"
+  checksum: 10/fbc93d6e9e7585febd59f0aed0ca3f39d94edbff623b308046fa0e74ef4c1643dbeda921d507bd5a5d54f2c8457d4a6b6bf4c1eaffe5f151c178d03d8083b8ca
+  languageName: node
+  linkType: hard
+
 "@nativescript/hook@npm:~3.0.4":
   version: 3.0.5
   resolution: "@nativescript/hook@npm:3.0.5"
   checksum: 10/ff2b1bc85a88e51e4d0b271d4c043b23bc640f47936dd65c9473be1a8faf8e5835504ac4430669c32f1e6cfb0e5c2a5eb3c363f9717c530e17f70ba2e8cfd829
+  languageName: node
+  linkType: hard
+
+"@nativescript/ios@npm:8.9.5":
+  version: 8.9.5
+  resolution: "@nativescript/ios@npm:8.9.5"
+  checksum: 10/a9a7a2a9133593cd07bc938f8184deb417f6e75b77af37e10f8f17279574a1ca3013bf98e0a55236f655fb29c9f4d4dca223a6854d4fd01719d4dd26f9c038ee
+  languageName: node
+  linkType: hard
+
+"@nativescript/theme@npm:3.1.0":
+  version: 3.1.0
+  resolution: "@nativescript/theme@npm:3.1.0"
+  checksum: 10/42adad22fc40f3d2b3a66c69976c0917eb21755dfbf859aa2acf83144960f8dc8f8ce0bd781b0cb7004afd86abd27c6fcd634e17d9bbba579dc76b20939ba308
   languageName: node
   linkType: hard
 
@@ -2065,10 +2152,84 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nativescript/types-android@npm:~8.9.0":
+  version: 8.9.0
+  resolution: "@nativescript/types-android@npm:8.9.0"
+  checksum: 10/c006be3f0a8fa6714bacd868c3dac9ea85e707f5a439631ad7d773492e68ce5d993213e59e205b3c62f07ef796eaadb1260d09271f451c5370104b71d4915949
+  languageName: node
+  linkType: hard
+
 "@nativescript/types-ios@npm:9.1.3":
   version: 9.1.3
   resolution: "@nativescript/types-ios@npm:9.1.3"
   checksum: 10/92a1dea602b46b53c46ca0f7bba784a5f983d26f95994efaaa3fdc3c9b51ef9ab039db28a1e2e31b1088db3b44cc5d1322b4475e628af358aaa8b5ba8d7a61c7
+  languageName: node
+  linkType: hard
+
+"@nativescript/types-ios@npm:~8.9.0":
+  version: 8.9.1
+  resolution: "@nativescript/types-ios@npm:8.9.1"
+  checksum: 10/fd8129919a48e65250521516bc18b3201df4f7be0e49be77eb54ed6729088142eb7dcdff6d0d41f57b782b23342d0ffe73152b1dfea06e28a61a62d4dd468514
+  languageName: node
+  linkType: hard
+
+"@nativescript/types@npm:8.9.1":
+  version: 8.9.1
+  resolution: "@nativescript/types@npm:8.9.1"
+  dependencies:
+    "@nativescript/types-android": "npm:~8.9.0"
+    "@nativescript/types-ios": "npm:~8.9.0"
+  checksum: 10/cad6dbb69ffbf544df0a865b34647494e7b44f66ddd8d880f934d576272170f083f6380fb0038104a64b43b558476d1345926e062fbed2926d2cf72c5a2c5188
+  languageName: node
+  linkType: hard
+
+"@nativescript/webpack@npm:5.0.38":
+  version: 5.0.38
+  resolution: "@nativescript/webpack@npm:5.0.38"
+  dependencies:
+    "@babel/core": "npm:^7.0.0"
+    "@pmmmwh/react-refresh-webpack-plugin": "npm:~0.6.1"
+    "@vue/compiler-sfc": "npm:^3.5.17"
+    acorn: "npm:^8.0.0"
+    acorn-stage3: "npm:^4.0.0"
+    ansi-colors: "npm:^4.1.3"
+    babel-loader: "npm:^10.0.0"
+    cli-highlight: "npm:^2.0.0"
+    commander: "npm:^14.0.0"
+    copy-webpack-plugin: "npm:^13.0.0"
+    css: "npm:^3.0.0"
+    css-loader: "npm:^7.0.0"
+    dotenv-webpack: "npm:^8.0.0"
+    fork-ts-checker-webpack-plugin: "npm:^9.0.0"
+    loader-utils: "npm:^2.0.0 || ^3.0.0"
+    postcss: "npm:^8.0.0"
+    postcss-import: "npm:^16.0.0"
+    postcss-loader: "npm:^8.0.0"
+    raw-loader: "npm:^4.0.0"
+    react-refresh: "npm:~0.18.0"
+    sass: "npm:^1.0.0"
+    sass-loader: "npm:^16.0.0"
+    sax: "npm:^1.0.0"
+    semver: "npm:^7.0.0 || ^6.0.0"
+    source-map: "npm:^0.7.0"
+    terser-webpack-plugin: "npm:^5.0.0"
+    ts-dedent: "npm:^2.0.0"
+    ts-loader: "npm:^9.0.0"
+    vue-loader: "npm:^17.4.2"
+    webpack: "npm:^5.30.0 <= 5.50.0 || ^5.51.2"
+    webpack-bundle-analyzer: "npm:^4.0.0"
+    webpack-chain: "npm:^6.0.0"
+    webpack-cli: "npm:^6.0.0"
+    webpack-merge: "npm:^6.0.0"
+    webpack-virtual-modules: "npm:^0.4.0"
+  peerDependencies:
+    nativescript-vue-template-compiler: ^2.8.1
+  peerDependenciesMeta:
+    nativescript-vue-template-compiler:
+      optional: true
+  bin:
+    nativescript-webpack: dist/bin/index.js
+  checksum: 10/205f873be07100f32a5a65557dc7d9b0d7c29f9313e50e2e099c49b011e63cc1040e7f4c4c475f190aad1fd9a5568d6612256da8964ae68991d1f0aea373359a
   languageName: node
   linkType: hard
 
@@ -3937,7 +4098,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.15.0, acorn@npm:^8.16.0, acorn@npm:^8.18.0":
+"acorn@npm:^8.15.0, acorn@npm:^8.16.0, acorn@npm:^8.18.0, acorn@npm:^8.7.0":
   version: 8.19.0
   resolution: "acorn@npm:8.19.0"
   bin:
@@ -5549,6 +5710,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"css-tree@npm:^1.1.2":
+  version: 1.1.3
+  resolution: "css-tree@npm:1.1.3"
+  dependencies:
+    mdn-data: "npm:2.0.14"
+    source-map: "npm:^0.6.1"
+  checksum: 10/29710728cc4b136f1e9b23ee1228ec403ec9f3d487bc94a9c5dbec563c1e08c59bc917dd6f82521a35e869ff655c298270f43ca673265005b0cd05b292eb05ab
+  languageName: node
+  linkType: hard
+
 "css-tree@npm:^2.3.1":
   version: 2.3.1
   resolution: "css-tree@npm:2.3.1"
@@ -5566,6 +5737,20 @@ __metadata:
     mdn-data: "npm:2.27.1"
     source-map-js: "npm:^1.2.1"
   checksum: 10/9945b387bdec756738c34d64b8287f05ca6645f51d1c8abaaa5822ec3e74533604103aaad164b8100afd8495e92120be7c1c6afbe5be89f867acc5b456ddd79c
+  languageName: node
+  linkType: hard
+
+"css-unit-converter@npm:^1.1.1":
+  version: 1.1.2
+  resolution: "css-unit-converter@npm:1.1.2"
+  checksum: 10/1058d7ce913caa07ae441f0536bb34a7ef0cfd7eb5e5194d440e7a4f4261cbb320720546db345d0e34b842e114d7b7e3817433e9b3efaee3ba25340627ed52e5
+  languageName: node
+  linkType: hard
+
+"css-what@npm:^6.1.0":
+  version: 6.2.2
+  resolution: "css-what@npm:6.2.2"
+  checksum: 10/3c5a53be94728089bd1716f915f7f96adde5dd8bf374610eb03982266f3d860bf1ebaf108cda30509d02ef748fe33eaa59aa75911e2c49ee05a85ef1f9fb5223
   languageName: node
   linkType: hard
 
@@ -5832,6 +6017,28 @@ __metadata:
   checksum: 10/a51744d9b53c164ba9c0492471a1a2ffa0b6727451bdc89e31627fdf4adda9d51277cfcbfb20f0a6f08ccb3c436f341df3e92631a3440226d93a8971724771fd
   languageName: node
   linkType: hard
+
+"demo-svelte@workspace:demo-svelte":
+  version: 0.0.0-use.local
+  resolution: "demo-svelte@workspace:demo-svelte"
+  dependencies:
+    "@akylas/nativescript": "npm:8.9.15"
+    "@nativescript-community/svelte-native": "npm:1.0.32"
+    "@nativescript-community/template-snippet": "npm:*"
+    "@nativescript-community/ui-material-core": "npm:^7.3.2"
+    "@nativescript/android": "npm:8.9.2"
+    "@nativescript/core": "npm:9.0.20"
+    "@nativescript/ios": "npm:8.9.5"
+    "@nativescript/theme": "npm:3.1.0"
+    "@nativescript/types": "npm:8.9.1"
+    "@nativescript/webpack": "npm:5.0.38"
+    svelte: "npm:4.2.20"
+    svelte-loader: "npm:3.2.4"
+    svelte-native-preprocessor: "npm:1.0.0"
+    svelte-preprocess: "npm:6.0.3"
+    typescript: "npm:5.9.3"
+  languageName: unknown
+  linkType: soft
 
 "depd@npm:^1.1.2":
   version: 1.1.2
@@ -7719,7 +7926,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.1.6":
+"glob@npm:^7.1.0, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.1.6":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
   dependencies:
@@ -9495,7 +9702,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loader-utils@npm:^2.0.0":
+"loader-utils@npm:^2.0.0 || ^3.0.0":
+  version: 3.2.1
+  resolution: "loader-utils@npm:3.2.1"
+  checksum: 10/177f5bb9b4c651263714fcd1b50682c1367b06893462529f510287775f9e461ca27a41bf364c8dffa9cd74ed9e8b1fdb30c03a526f6bcf12573bdc1a1644d086
+  languageName: node
+  linkType: hard
+
+"loader-utils@npm:^2.0.0, loader-utils@npm:^2.0.4":
   version: 2.0.4
   resolution: "loader-utils@npm:2.0.4"
   dependencies:
@@ -9503,13 +9717,6 @@ __metadata:
     emojis-list: "npm:^3.0.0"
     json5: "npm:^2.1.2"
   checksum: 10/28bd9af2025b0cb2fc6c9c2d8140a75a3ab61016e5a86edf18f63732216e985a50bf2479a662555beb472a54d12292e380423705741bfd2b54cab883aa067f18
-  languageName: node
-  linkType: hard
-
-"loader-utils@npm:^2.0.0 || ^3.0.0":
-  version: 3.2.1
-  resolution: "loader-utils@npm:3.2.1"
-  checksum: 10/177f5bb9b4c651263714fcd1b50682c1367b06893462529f510287775f9e461ca27a41bf364c8dffa9cd74ed9e8b1fdb30c03a526f6bcf12573bdc1a1644d086
   languageName: node
   linkType: hard
 
@@ -9746,6 +9953,13 @@ __metadata:
   version: 1.1.0
   resolution: "math-intrinsics@npm:1.1.0"
   checksum: 10/11df2eda46d092a6035479632e1ec865b8134bdfc4bd9e571a656f4191525404f13a283a515938c3a8de934dbfd9c09674d9da9fa831e6eb7e22b50b197d2edd
+  languageName: node
+  linkType: hard
+
+"mdn-data@npm:2.0.14":
+  version: 2.0.14
+  resolution: "mdn-data@npm:2.0.14"
+  checksum: 10/64c629fcf14807e30d6dc79f97cbcafa16db066f53a294299f3932b3beb0eb0d1386d3a7fe408fc67348c449a4e0999360c894ba4c81eb209d7be4e36503de0e
   languageName: node
   linkType: hard
 
@@ -11260,6 +11474,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-value-parser@npm:^3.3.0":
+  version: 3.3.1
+  resolution: "postcss-value-parser@npm:3.3.1"
+  checksum: 10/e8bc676092ad0c4a628e8d7b06ef1844a157bcce22e489d72ac661d6d47b8e8e7c342e5e0da807056a0a2fced1372fff0f67fbfd6e06fd8509828ac6190b54ae
+  languageName: node
+  linkType: hard
+
 "postcss-value-parser@npm:^4.0.0, postcss-value-parser@npm:^4.1.0, postcss-value-parser@npm:^4.2.0":
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
@@ -11609,6 +11830,16 @@ __metadata:
   dependencies:
     resolve: "npm:^1.20.0"
   checksum: 10/ad3caed8afdefbc33fbc30e6d22b86c35b3d51c2005546f4e79bcc03c074df804b3640ad18945e6bef9ed12caedc035655ec1082f64a5e94c849ff939dc0a788
+  languageName: node
+  linkType: hard
+
+"reduce-css-calc@npm:^2.1.8":
+  version: 2.1.8
+  resolution: "reduce-css-calc@npm:2.1.8"
+  dependencies:
+    css-unit-converter: "npm:^1.1.1"
+    postcss-value-parser: "npm:^3.3.0"
+  checksum: 10/ad0269e4f32e80d184faa76746db825917c9482a5aa2d455c249261515916e3607d053667444269b6b8f21d0952bd29f6e24a1fb811838f55d91404bea3d2c1d
   languageName: node
   linkType: hard
 
@@ -13108,6 +13339,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"svelte-dev-helper@npm:^1.1.9":
+  version: 1.1.9
+  resolution: "svelte-dev-helper@npm:1.1.9"
+  checksum: 10/f4444ac4173e3cb29fb342359b30b49ff35affe3507f2a0b46cea803daae756087390661253c0f1314e2b2c5178a0549c8cb556d480c86e901c9203eb06deeb4
+  languageName: node
+  linkType: hard
+
 "svelte-eslint-parser@npm:1.11.0":
   version: 1.11.0
   resolution: "svelte-eslint-parser@npm:1.11.0"
@@ -13148,6 +13386,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"svelte-hmr@npm:^0.14.2":
+  version: 0.14.12
+  resolution: "svelte-hmr@npm:0.14.12"
+  peerDependencies:
+    svelte: ">=3.19.0"
+  checksum: 10/d88b6d9727d34446ca400d5610245b269f430e479e8af4b7c38291d623d6770a4369581efd315b61ee89696acc1638259205b961b8c100a68acdc06198450088
+  languageName: node
+  linkType: hard
+
+"svelte-loader@npm:3.2.4":
+  version: 3.2.4
+  resolution: "svelte-loader@npm:3.2.4"
+  dependencies:
+    loader-utils: "npm:^2.0.4"
+    svelte-dev-helper: "npm:^1.1.9"
+    svelte-hmr: "npm:^0.14.2"
+  peerDependencies:
+    svelte: ^3.0.0 || ^4.0.0-next.0 || ^5.0.0-next.1
+  checksum: 10/a467532bede47e01524e92f9263e2567a64030c545a3c8137387a22929efba95b20512e7a8be7072fcf392213eccd8402a355b98cc8e26169a59107a03cc821d
+  languageName: node
+  linkType: hard
+
+"svelte-native-preprocessor@npm:1.0.0":
+  version: 1.0.0
+  resolution: "svelte-native-preprocessor@npm:1.0.0"
+  peerDependencies:
+    svelte: ^3.37.0
+  checksum: 10/5f8306714ede6bb45a8d8a0762d4499ab64c6052d7d515978f14c87aef5456408292f0e6789d1549447e48c6b5615dc6833abda26145a60067c56f784e11fe5e
+  languageName: node
+  linkType: hard
+
 "svelte-native5@npm:@nativescript-community/svelte-native@5.0.0-rc.1":
   version: 5.0.0-rc.1
   resolution: "@nativescript-community/svelte-native@npm:5.0.0-rc.1"
@@ -13157,6 +13426,46 @@ __metadata:
     "@nativescript/core": ^8.0.0 || ^9.0.0
     svelte: ^5.59.0
   checksum: 10/1e3d5f3a629a30b7e5526b45e26ed6330f796a85ec4d742c4116c5472127a2c149203eb8c020b9c3b3a7b6a0b127e2672ece339ee485a87b4b7f8a73b4a943bb
+  languageName: node
+  linkType: hard
+
+"svelte-preprocess@npm:6.0.3":
+  version: 6.0.3
+  resolution: "svelte-preprocess@npm:6.0.3"
+  peerDependencies:
+    "@babel/core": ^7.10.2
+    coffeescript: ^2.5.1
+    less: ^3.11.3 || ^4.0.0
+    postcss: ^7 || ^8
+    postcss-load-config: ">=3"
+    pug: ^3.0.0
+    sass: ^1.26.8
+    stylus: ">=0.55"
+    sugarss: ^2.0.0 || ^3.0.0 || ^4.0.0
+    svelte: ^4.0.0 || ^5.0.0-next.100 || ^5.0.0
+    typescript: ^5.0.0
+  peerDependenciesMeta:
+    "@babel/core":
+      optional: true
+    coffeescript:
+      optional: true
+    less:
+      optional: true
+    postcss:
+      optional: true
+    postcss-load-config:
+      optional: true
+    pug:
+      optional: true
+    sass:
+      optional: true
+    stylus:
+      optional: true
+    sugarss:
+      optional: true
+    typescript:
+      optional: true
+  checksum: 10/872fcf6013508a6abe7526d5fc69cac526f1005b1f2db2d38fc6a011c98767b533e154e178ae9cddbe90fbe058bee235918f473fb769d72df0057f3a738a1553
   languageName: node
   linkType: hard
 
@@ -13475,7 +13784,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:2.9.1":
+"tslib@npm:2.9.1, tslib@npm:^2.6.3":
   version: 2.9.1
   resolution: "tslib@npm:2.9.1"
   checksum: 10/20aa8c3282c88f8dd1bf0a62c5b1aa03b35998cbc6db4780f6e84d593ba4ffe232bd967916c6e0f96b9e5d719dade9e329d1b2cfede31043481d8fd13f10ca5f
@@ -13730,6 +14039,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:5.9.3":
+  version: 5.9.3
+  resolution: "typescript@npm:5.9.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10/c089d9d3da2729fd4ac517f9b0e0485914c4b3c26f80dc0cffcb5de1719a17951e92425d55db59515c1a7ddab65808466debb864d0d56dcf43f27007d0709594
+  languageName: node
+  linkType: hard
+
 "typescript@npm:^3.5.3":
   version: 3.9.10
   resolution: "typescript@npm:3.9.10"
@@ -13747,6 +14066,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10/b9b1e73dabac5dc730c041325dbd9c99467c1b0d239f1b74ec3b90d831384af3e2ba973946232df670519147eb51a2c20f6f96163cea2b359f03de1e2091cc4f
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>":
+  version: 5.9.3
+  resolution: "typescript@patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10/696e1b017bc2635f4e0c94eb4435357701008e2f272f553d06e35b494b8ddc60aa221145e286c28ace0c89ee32827a28c2040e3a69bdc108b1a5dc8fb40b72e3
   languageName: node
   linkType: hard
 

@@ -8,9 +8,9 @@
     "scripts": {
         "build": "npm run tsc && npm run readme",
         "build.all": "npm run build",
-        "readme": "../../node_modules/.bin/readme generate -c ../../tools/readme/blueprint.json",
-        "tsc": "../../node_modules/.bin/cpy '**/*.d.ts' '../../packages/ui-popover' --parents --cwd=../../src/ui-popover && ../../node_modules/.bin/tsc -skipLibCheck -d && ../../node_modules/.bin/tsc --build tsconfig.svelte5.json",
-        "clean": "../../node_modules/.bin/rimraf ./*.d.ts ./*.js ./*.js.map"
+        "readme": "readme generate -c ../../tools/readme/blueprint.json",
+        "tsc": "cpy '**/*.d.ts' '../../packages/ui-popover' --parents --cwd=../../src/ui-popover && tsc  --build",
+        "clean": "bin/rimraf ./*.d.ts ./*.js ./*.js.map ./*.tsbuildinfo ./*.mjs ./*.mjs.map ./angular ./svelte ./svelte5 ./vue* ./react"
     },
     "nativescript": {
         "platforms": {

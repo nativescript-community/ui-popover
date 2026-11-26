@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.0](https://github.com/nativescript-community/ui-popover/compare/v0.1.22...v0.2.0) (2026-11-26)
+
+### Features
+
+* **svelte:** add a Svelte 5 binding in svelte5/ ([4b81432](https://github.com/nativescript-community/ui-popover/commit/4b81432ff831b37cb348f5e242dadd3a5a006a01))
+* **svelte:** build the svelte5/ binding against svelte-native 5 ([0f21533](https://github.com/nativescript-community/ui-popover/commit/0f21533bc8ceefe03afcdc66645aad85e7e45119)), references [#5](https://github.com/nativescript-community/ui-popover/issues/5)
+
+### Bug Fixes
+
+* make the shared tsc --build pass for ui-popover ([8e662b8](https://github.com/nativescript-community/ui-popover/commit/8e662b8c4efe848ca87390624a3a50b49f939203))
+
 ## [0.1.22](https://github.com/nativescript-community/ui-popover/compare/v0.1.21...v0.1.22) (2025-10-02)
 
 ### Bug Fixes

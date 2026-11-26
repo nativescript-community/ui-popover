@@ -9,7 +9,7 @@
         }
     },
     "include": ["../../src/ui-popover/**/*", "../../references.d.ts", "../../tools/references.d.ts", "../../src/references.d.ts"],
-    "exclude": ["../../src/ui-popover/angular/**"],
+    "exclude": ["../../src/ui-popover/svelte5/**/*", "../../src/ui-popover/angular/**"],
     "references": [
         {
             //Need for tsc
